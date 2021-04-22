@@ -1,0 +1,5 @@
+D:\QC_Developer\QC_CAD_Pluggins\QC_Format_Layer\QC_Format_Layer\bin\Debug\QC_Format_Layer.dll
+D:\QC_Developer\QC_CAD_Pluggins\QC_Format_Layer\QC_Format_Layer\bin\Debug\QC_Format_Layer.pdb
+D:\QC_Developer\QC_CAD_Pluggins\QC_Format_Layer\QC_Format_Layer\obj\Debug\QC_Format_Layer.csproj.CoreCompileInputs.cache
+D:\QC_Developer\QC_CAD_Pluggins\QC_Format_Layer\QC_Format_Layer\obj\Debug\QC_Format_Layer.dll
+D:\QC_Developer\QC_CAD_Pluggins\QC_Format_Layer\QC_Format_Layer\obj\Debug\QC_Format_Layer.pdb

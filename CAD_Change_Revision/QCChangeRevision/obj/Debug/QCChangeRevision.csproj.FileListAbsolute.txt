@@ -1,0 +1,56 @@
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\QCChangeRevision.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\QCChangeRevision.pdb
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.pdb
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.FormGeneral.resources
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.GenerateResource.cache
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\accoremgd.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\acdbmgd.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\acdbmgdbrep.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\acmgd.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdUiPalettes.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcDx.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcDxPublishUi.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdWindows.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcMr.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcWindows.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdUIMgd.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcTcMgd.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcCui.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\ManagedMC3.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\Autodesk.AutoCAD.Interop.Common.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcMNUParser.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\acdbmgd.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcDx.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcDxPublishUi.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AdWindows.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcMr.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcWindows.resources.dll
+C:\Users\james\OneDrive - QC INGENIEROS\01-QC Software\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CopyComplete
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\QCChangeRevision.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\QCChangeRevision.pdb
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdUiPalettes.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcDx.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcDxPublishUi.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdWindows.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcMr.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcWindows.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AdUIMgd.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcTcMgd.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcCui.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\ManagedMC3.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\Autodesk.AutoCAD.Interop.Common.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\AcMNUParser.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\acdbmgd.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcDx.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcDxPublishUi.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AdWindows.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcMr.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\bin\Debug\en-US\AcWindows.resources.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csprojAssemblyReference.cache
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.FormGeneral.resources
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.GenerateResource.cache
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CoreCompileInputs.cache
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CopyComplete
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.dll
+G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.pdb
