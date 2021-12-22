@@ -1,0 +1,9 @@
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\obj\Debug\QC_CADToTekla.csproj.AssemblyReference.cache
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\obj\Debug\QC_CADToTekla.csproj.CoreCompileInputs.cache
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\bin\Debug\QC_CADToTekla.dll
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\bin\Debug\QC_CADToTekla.pdb
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\bin\Debug\QCLibraryTekla.dll
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\bin\Debug\QCLibraryTekla.pdb
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\obj\Debug\QC_CADToTekla.csproj.CopyComplete
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\obj\Debug\QC_CADToTekla.dll
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\QC_CADToTekla\QC_CADToTekla\obj\Debug\QC_CADToTekla.pdb
