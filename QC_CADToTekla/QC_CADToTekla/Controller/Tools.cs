@@ -39,15 +39,22 @@ namespace QC_CADToTekla
     /// </summary>
     class CADToTekla
     {
+        private static double _xTotal { get; set; }
         /// <summary>
         /// Exportar a Fehab
         /// </summary>
         public static void Execute()
         {
             //Obtener las lineas seleccionadas
-            List<Line> Lines = SelectElementsCAD();
+            List<Line> lines = SelectElementsCAD();
 
-            //
+            //Obtener el x global para transformar coordenadas
+            GetXGlobal(lines);
+
+            //Convertir puntos cad a tekla
+            List<List<g3d.Point>> pointsTk = getPointsToTekla(lines);
+
+            TeklaTools.CreateRebarTekla(pointsTk);
 
             //Mensaje de confirmacion
             ViewEvents.ShowMessage("Confirmation message",
@@ -73,28 +80,28 @@ namespace QC_CADToTekla
             //Opciones de seleccion
             PromptSelectionOptions promptSelectionOptions = new PromptSelectionOptions();
             promptSelectionOptions.AllowDuplicates = false;
-            promptSelectionOptions.SingleOnly = false;            
+            promptSelectionOptions.SingleOnly = false;
 
             using (Transaction tr = db.TransactionManager.StartTransaction())
             {
                 //Seledcionar los elementos
                 PromptSelectionResult selectionPrompt = ed.GetSelection(promptSelectionOptions);
 
-                if(selectionPrompt.Status == PromptStatus.OK)
+                if (selectionPrompt.Status == PromptStatus.OK)
                 {
                     foreach (SelectedObject so in selectionPrompt.Value)
                     {
-                        if(so == null) { continue; }
+                        if (so == null) { continue; }
 
                         //Leyendo la entidad de objeto
                         Entity entity = tr.GetObject(so.ObjectId, OpenMode.ForRead) as Entity;
-                        
+
                         //Guardar solo las lineas
-                        if(entity is Line) 
+                        if (entity is Line)
                         { lines.Add(entity as Line); }
                     }
                 }
-            }            
+            }
 
             return lines;
         }
@@ -106,9 +113,60 @@ namespace QC_CADToTekla
         /// <returns></returns>
         public static List<List<g3d.Point>> getPointsToTekla(List<Line> Lines)
         {
-            List<List<g3d.Point>> points = new List<List<g3d.Point>>();
+            List<List<g3d.Point>> allPoints = new List<List<g3d.Point>>();
 
-            return points;
+            foreach (Line line in Lines)
+            {
+                List<g3d.Point> pointsTk = new List<g3d.Point>();
+
+                //Puntos CAD
+                Point3d onePointCAD = line.StartPoint;
+                Point3d twoPointCAD = line.EndPoint;
+
+                //Puntos tekla
+                g3d.Point onePointTk = new g3d.Point((onePointCAD.X - _xTotal) * 1000, 0);
+                g3d.Point twoPointTk = new g3d.Point((twoPointCAD.X - _xTotal) * 1000, 0);
+
+                //Agregar puntos
+                pointsTk.Add(onePointTk);
+                pointsTk.Add(twoPointTk);
+
+                //Ordenar por menor x
+                pointsTk = pointsTk
+                    .OrderBy(x => x.X)
+                    .ToList();
+
+                if (pointsTk == null || !pointsTk.Any())
+                    continue;
+
+                //Agregar lista a allPoints
+                allPoints.Add(pointsTk);
+            }
+
+            //Ordenar por el punto de inicio
+            allPoints = allPoints.OrderBy(x => x.FirstOrDefault().X).ToList();
+
+            return allPoints;
+        }
+
+        /// <summary>
+        /// Devuelve la coordenada global x para restar
+        /// </summary>
+        /// <param name="Lines"></param>
+        /// <returns></returns>
+        /// 
+        public static void GetXGlobal(List<Line> Lines)
+        {
+            List<double> xs = new List<double>();
+
+            foreach (Line l in Lines)
+            {
+                xs.Add(l.StartPoint.X);
+                xs.Add(l.EndPoint.X);
+            }
+
+            xs.Sort();          
+            _xTotal = xs.First();
         }
     }
 
@@ -138,6 +196,85 @@ namespace QC_CADToTekla
             ModelPath = MyModel.GetInfo().ModelPath;
 
             return true;
+        }
+
+        /// <summary>
+        /// Crear refuerzo en tekla
+        /// </summary>
+        /// <param name="allPointsTekla"></param>
+        public static void CreateRebarTekla(List<List<g3d.Point>> allPointsTekla)
+        {
+            //Verificacion de conexion de model
+            IsModelConnected();
+
+            //Seleccionar parte en tekla
+            tsm.ModelObject part = SelectionElements.ReturnPartSelection(MyModel);
+
+            //Seleccionar puntos
+            List<g3d.Point> pointSelectUser = SelectPoint();
+
+            //Guardar el plano de trabajo actual
+            tsm.TransformationPlane currentTP = MyModel.GetWorkPlaneHandler()
+                .GetCurrentTransformationPlane();
+
+            //Convertimos plano de trabajo con referencia a la parte
+            MyModel.GetWorkPlaneHandler().SetCurrentTransformationPlane(
+                new tsm.TransformationPlane(part.GetCoordinateSystem()));
+
+            foreach (List<g3d.Point> pointsTekla in allPointsTekla)
+            {
+                //nuevos puntos
+                g3d.Point startPonitNew = NewPoint(pointsTekla, pointSelectUser, 0);
+                g3d.Point endPonitNew = NewPoint(pointsTekla, pointSelectUser, 1);
+
+                //Modificacion de coordenadas
+                tsm.Beam beam = new tsm.Beam(startPonitNew, endPonitNew);
+                // Set the Beams Material and Profile.
+                beam.Material.MaterialString = "S235JR";
+                beam.Profile.ProfileString = "HEA400";
+                beam.Insert();
+            }
+
+
+            //regresar al plano original
+            MyModel.GetWorkPlaneHandler().SetCurrentTransformationPlane(currentTP);
+            MyModel.CommitChanges();
+        }
+
+        /// <summary>
+        /// Devuelve el nuevo punto
+        /// </summary>
+        /// <param name="points"></param>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public static g3d.Point NewPoint(List<g3d.Point> pointsTekla, 
+            List<g3d.Point> pointSelectUser, int location)
+        {
+            g3d.Point point = new g3d.Point(pointsTekla[location].X,
+                pointSelectUser[0].Y, pointSelectUser[0].Z);
+
+            return point;
+        }
+
+        /// <summary>
+        /// Devuelve los puntos seleciconado
+        /// </summary>
+        /// <returns></returns>
+        public static List<g3d.Point> SelectPoint()
+        {
+            List<g3d.Point> points = new List<g3d.Point>();
+
+            var pickers = new mui.Picker();
+
+            //Ancho de viga
+            var selected = pickers.PickPoints(mui.Picker.PickPointEnum.PICK_TWO_POINTS
+                , "Select the beam points");
+
+            //Agregar en lista de puntos
+            foreach (g3d.Point p in selected)
+                points.Add(p);
+
+            return points;
         }
     }
 
