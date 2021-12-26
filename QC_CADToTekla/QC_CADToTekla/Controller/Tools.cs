@@ -165,7 +165,7 @@ namespace QC_CADToTekla
                 xs.Add(l.EndPoint.X);
             }
 
-            xs.Sort();          
+            xs.Sort();
             _xTotal = xs.First();
         }
     }
@@ -179,7 +179,6 @@ namespace QC_CADToTekla
         //Guardar Modelo
         public static tsm.Model MyModel { get; set; }
         public static string ModelPath { get; set; }
-
 
         /// <summary>
         /// Obtener el modelo y verificar si esta conectado
@@ -208,7 +207,7 @@ namespace QC_CADToTekla
             IsModelConnected();
 
             //Seleccionar parte en tekla
-            tsm.ModelObject part = SelectionElements.ReturnPartSelection(MyModel);
+            tsm.Part part = SelectionElements.ReturnPartSelection(MyModel) as tsm.Part;
 
             //Seleccionar puntos
             List<g3d.Point> pointSelectUser = SelectPoint();
@@ -221,24 +220,63 @@ namespace QC_CADToTekla
             MyModel.GetWorkPlaneHandler().SetCurrentTransformationPlane(
                 new tsm.TransformationPlane(part.GetCoordinateSystem()));
 
+            //Conteo para la primera barra
+            int count = 0;
+            bool firtsRebar = true;
+
             foreach (List<g3d.Point> pointsTekla in allPointsTekla)
             {
+                if (count != 0)
+                    firtsRebar = false;
+
                 //nuevos puntos
-                g3d.Point startPonitNew = NewPoint(pointsTekla, pointSelectUser, 0);
-                g3d.Point endPonitNew = NewPoint(pointsTekla, pointSelectUser, 1);
+                g3d.Point startPointNew = NewPoint(pointsTekla, pointSelectUser, 0, firtsRebar);
+                g3d.Point endPointNew = NewPoint(pointsTekla, pointSelectUser, 1, firtsRebar);
+
+                //Crear poligono para el refuerzo
+                tsm.Polygon polygon = new tsm.Polygon();
+                polygon.Points.Add(startPointNew);
+                polygon.Points.Add(endPointNew);
 
                 //Modificacion de coordenadas
-                tsm.Beam beam = new tsm.Beam(startPonitNew, endPonitNew);
-                // Set the Beams Material and Profile.
-                beam.Material.MaterialString = "S235JR";
-                beam.Profile.ProfileString = "HEA400";
-                beam.Insert();
-            }
+                //tsm.Beam beam = new tsm.Beam(startPonitNew, endPonitNew);
 
+                // Set the Beams Material and Profile.
+                //beam.Material.MaterialString = "S235JR";
+                //beam.Profile.ProfileString = "HEA400";
+                //beam.Insert();
+
+                //Insertar refuerzo
+                tsm.RebarGroup rebarGroup = CreateRebarTekla(part, polygon);
+
+                //Conteo
+                count++;
+            }
 
             //regresar al plano original
             MyModel.GetWorkPlaneHandler().SetCurrentTransformationPlane(currentTP);
             MyModel.CommitChanges();
+        }
+
+        public static tsm.RebarGroup CreateRebarTekla(tsm.Part part, tsm.Polygon polygon)
+        {
+            //creacion principal del refuerzo
+            tsm.RebarGroup rebarGroup = new tsm.RebarGroup();
+
+            //agregar poligono
+            rebarGroup.Polygons.Add(polygon);
+
+            //Obtener el nombre de la parte para pone el prefijo
+            string name = string.Empty;
+            if (ViewTools.IsTopRebar) { name = "SUP"; }
+            else { name = "INF"; }
+
+            //Otros Datos
+            rebarGroup.Name = name;
+            rebarGroup.Size = ViewTools.Size;
+            rebarGroup.Grade = ViewTools.Grade;
+
+            return rebarGroup;
         }
 
         /// <summary>
@@ -247,10 +285,14 @@ namespace QC_CADToTekla
         /// <param name="points"></param>
         /// <param name="location"></param>
         /// <returns></returns>
-        public static g3d.Point NewPoint(List<g3d.Point> pointsTekla, 
-            List<g3d.Point> pointSelectUser, int location)
+        public static g3d.Point NewPoint(List<g3d.Point> pointsTekla,
+            List<g3d.Point> pointSelectUser, int location, bool firtsRebar)
         {
-            g3d.Point point = new g3d.Point(pointsTekla[location].X,
+            double movePoint = 0;
+
+            if (firtsRebar && location == 1) { movePoint = ViewTools.InitialCover; }
+
+            g3d.Point point = new g3d.Point(pointsTekla[location].X + movePoint,
                 pointSelectUser[0].Y, pointSelectUser[0].Z);
 
             return point;
@@ -283,9 +325,14 @@ namespace QC_CADToTekla
     /// </summary>
     class ViewTools
     {
-        public static int selOption { get; set; }
-        public static string pathFile { get; set; }
-        public static string nameFile { get; set; }
-        public static ViewMain viewMain { get; set; }
+        //Recubrimiento
+        public static double InitialCover { get; set; }
+        public static bool IsTopRebar { get; set; }
+        public static double PlaneCover { get; set; }
+        public static int CountRebar { get; set; }
+
+        //Caracteristicas de la barra de refuerzo
+        public static string Size { get; set; }
+        public static string Grade { get; set; }
     }
 }
