@@ -617,6 +617,12 @@ This event allows applications to respond to users' attempts to execute commands
         <member name="E:Autodesk.AutoCAD.ApplicationServices.Document.LayoutSwitching">
             <summary>This event is fired when the layout is switched.</summary>
         </member>
+        <member name="E:Autodesk.AutoCAD.ApplicationServices.Document.ModelessOperationWillStart">
+            <summary>Wraps the AcEditorReactor.modelessOperationWillStart() ObjectARX function.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.ApplicationServices.Document.ModelessOperationEnded">
+            <summary>Wraps the AcEditorReactor.modelessOperationEnded() ObjectARX function.</summary>
+        </member>
         <member name="P:Autodesk.AutoCAD.ApplicationServices.Document.FormatForSave">
             <summary>The DocumentSaveFormat for the document.</summary>
         </member>
@@ -1095,6 +1101,12 @@ A DSD file is an INI file used when publishing multiple sheets with the PUBLISH 
         </member>
         <member name="P:Autodesk.AutoCAD.ApplicationServices.BeginQuitEventArgs.IsVetoed">
             <summary>This is IsVetoed, a member of class BeginQuitEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.ApplicationServices.ModelessOperationEventArgs">
+            <summary>Provides data for the ModelessOperationEnded and ModelessOperationWillStart events.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.ApplicationServices.ModelessOperationEventArgs.Context">
+            <summary>Accesses the current context of the operation.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.EditorInput.PromptPointOptionsEventArgs">
             <summary>This class provides data for the PromptingForPoint event of the Editor class.</summary>
@@ -2198,7 +2210,8 @@ If type is already in the class list, the value of exactMatch is applied to the 
             <summary>Returns the optional details of the selected sub object.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.EditorInput.SelectedSubObject.GraphicsSystemMarker">
-            <summary>Obsolete - Use the GraphicsSystemMarkerPtr property instead.</summary>
+            <summary>Obsolete - Use the GraphicsSystemMarkerPtr property instead 
+Gets a value that describes what part of the object was selected.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.EditorInput.SelectedSubObject.GraphicsSystemMarkerPtr">
             <summary>Returns the GS Marker of the selected sub object.</summary>
@@ -2317,7 +2330,8 @@ If type is already in the class list, the value of exactMatch is applied to the 
             <summary>Gets a value that describes how the object was selected.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.EditorInput.SelectedObject.GraphicsSystemMarker">
-            <summary>Obsolete - Use the GraphicsSystemMarkerPtr property instead.</summary>
+            <summary>Obsolete - Use the GraphicsSystemMarkerPtr property instead 
+Gets a value that describes what part of the object was selected.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.EditorInput.SelectedObject.GraphicsSystemMarkerPtr">
             <summary>Returns the GS Marker of the selected sub object.</summary>

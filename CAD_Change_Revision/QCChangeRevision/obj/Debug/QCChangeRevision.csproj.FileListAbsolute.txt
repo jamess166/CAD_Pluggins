@@ -54,3 +54,12 @@ G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevis
 G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CopyComplete
 G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.dll
 G:\Unidades compartidas\QC_Developer\QCAutocadApi\QCChangeRevision\QCChangeRevision\obj\Debug\QCChangeRevision.pdb
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\bin\Debug\QCChangeRevision.dll
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\bin\Debug\QCChangeRevision.pdb
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.FormGeneral.resources
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.GenerateResource.cache
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CoreCompileInputs.cache
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.CopyComplete
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.dll
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.pdb
+E:\Developer\Autodesk_Pluggins\CAD_Pluggins\CAD_Change_Revision\QCChangeRevision\obj\Debug\QCChangeRevision.csproj.AssemblyReference.cache
